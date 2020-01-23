@@ -30,10 +30,9 @@ Once the virtual machine loads, Eclipse will open -- this process may take a few
 To see Holmes output for each defect:
 
 1. Double-click a TODO in the Tasks View to get to the failing test.
+    * *Defect 0* runs the test generation portion of Holmes (which does not include execution traces, as this was not automated in the user study version of Holmes).
 
-*Defect 0* runs the test generation portion of Holmes (which does not include execution traces, as this was not automated in the user study version of Holmes).
-
-*Defects 1-6* show the pre-processed output that participants saw during the user study.
+    * *Defects 1-6* show the pre-processed output that participants saw during the user study.
 
 2. Highlight the method that takes the input being tested. Each TODO is followed by comments that specify what we asked participants to do and the method to highlight.
 
