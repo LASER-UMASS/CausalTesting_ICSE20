@@ -20,7 +20,7 @@ To load the virtual machine, you will need to import the **CausalTesting_Artifac
 
 Once the virtual machine is imported, it will appear in your VirtualBox Manager as **CausalTesting_Artifact**. You can now start the virtual machine by clicking the green **"Start"** arrow at the top of the VirtualBox Manager (see screenshot below).
 
-<img src="https://drive.google.com/thumbnail?id=1VjrcBPwrz4LO8cwlspb0TmEUcqwMoCp-" alt="VirtualBox Manager" style="float: center" />
+<img src="https://drive.google.com/thumbnail?id=1VjrcBPwrz4LO8cwlspb0TmEUcqwMoCp-" alt="VirtualBox Manager"/>
 
 Once the virtual machine loads, Eclipse will open -- this process may take a few minutes. Once Eclipse opens, there will be 7 files opens labeled *Defect 0- Defect 6*. At the bottom of the window, the Tasks View is open with a list of TODOs. Each TODO is attached to the failing test for each defect. For example, **TODO: Test 00 (Training)** is associated with *Defect_0_Training*.
 
