@@ -26,9 +26,7 @@ debriefing following the study (Evaluation-Questionnaire.pdf)
 
 ## Where can I obtain the artifact components?
 
-All the above listed artifacts can be found in the following github
-repository:
+All the above listed artifacts, with the exception of the virtual machine file, are located in this repository.
 
-The **INSTALL.md** file provides details on how to set up and run the
-virutal machine. The other components of the artifact are made
-available for exploration and re-use.
+
+The **INSTALL.md** file provides details on how to locate, set up, and run the virutal machine. 
