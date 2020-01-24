@@ -3,7 +3,7 @@
 This is the artifact for the paper *"Causal Testing: Understanding
 Defects' Root Causes"*. This artifact replicates the user study setup
 used to evaluate our technique, including the supplementary data
-collection materials.
+collection materials and prototype source code.
 
 ## What is included in the artifact?
 
