@@ -10,7 +10,7 @@ collection materials.
 Our artifact includes the following:
 
 1. A virtual machine file (CausalTesting_Artifact.ova) that contains
-the user study setup and version of Holmes used.
+the user study setup and source code for the version of Holmes used.
 
 2. The form participants completed as they worked through
 each defect in the user study (Cause-Identification-Form.pdf).
