@@ -42,10 +42,11 @@ To see Holmes output for each defect:
 
 <img src="https://drive.google.com/uc?id=1T5IOWdJvIkt6nte0zcKnrlbdPxQzraol" alt="Run Holmes command"/>
 
-*Defect 0* runs the test generation portion of Holmes (which does not include execution traces, as this was not automated in the user study version of Holmes).
 
-*Defects 1-6* show the pre-processed output that participants saw during the user study.
-    
-If you are running Holmes on *Defect 0*, the editor will automatically go to the top of the file as Holmes generates and executes tests. This process will take a minute or two; eventually the Holmes View will open with results of the execution.
+**Test 00** runs the test generation portion of Holmes (which does not include execution traces, as this was not automated in the user study version of Holmes). If you are running Holmes on **Test 00**, the editor will automatically go to the top of the file as Holmes generates and executes tests. This process will take a minute or two; eventually the Holmes View will open with results of the execution.
 
-If you are running Holmes on *Defects 1-6*, after a few seconds, the Holmes View will open with the pre-processed results used in our user study. For each of these defects, the output includes the original failing test, generated passing tests, and generated faiing tests. You can access the execution trace for each test by clicking the "See Execution Trace" button under the test of interest.
+<img src="https://drive.google.com/uc?id=1ZP2c1zftIuyvyyuEPOBj1pTb9mujvi8N" alt="Test 00 Output"/>
+
+**Test 01 - Test 06** show the pre-processed output that participants saw during the user study. If you are running Holmes on **Test 01 - Test 06**, after a few seconds, the Holmes View will open with the pre-processed results used in our user study. For each of these defects, the output includes the original failing test, generated passing tests, and generated faiing tests. You can access the execution trace for each test by clicking the **"See Execution Trace"** button under the test of interest.
+
+<img src="https://drive.google.com/uc?id=1U5LBRjhgRx7kCZpQRWb3qjVoMgNiLzC_" alt="Run Holmes command"/>
