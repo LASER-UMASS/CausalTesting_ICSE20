@@ -10,7 +10,7 @@ Download this file to your computer. Make sure you make note of where you put th
 
 Before you can run the virtual machine, you will need to download and install [VirtualBox 6](https://www.virtualbox.org).
 
-Once you've installed VirtualBox, you're reading to load and run the virtual machine.
+Once you've installed VirtualBox, you're ready to load and run the virtual machine.
 To load the virtual machine, you will need to import the **CausalTesting_Artifact.ova** file into VirtualBox. You do so as follows:
 
 1. Open VirtualBox.
@@ -30,7 +30,8 @@ At the bottom of the window, the Tasks View is open with a list of TODOs. Each T
 
 To see Holmes output for each defect:
 
-1. Double-click a TODO in the Tasks View to get to the failing test. Each TODO is followed by comments that specify what we asked participants to do and the method to highlight.
+**1. Double-click a TODO in the Tasks View to get to the failing test that exposes the defect.** 
+Each TODO is followed by comments that specify what we asked participants to do and the method to highlight for executing Holmes.
 
 <img src="https://drive.google.com/uc?id=1fpS9WQLitBs_fk07tuBtkhkkrLHGAh0x" alt="Eclipse TODOs"/>
 
