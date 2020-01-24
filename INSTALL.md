@@ -30,16 +30,17 @@ At the bottom of the window, the Tasks View is open with a list of TODOs. Each T
 
 To see Holmes output for each defect:
 
-1. Double-click a TODO in the Tasks View to get to the failing test.
+1. Double-click a TODO in the Tasks View to get to the failing test. Each TODO is followed by comments that specify what we asked participants to do and the method to highlight.
 
 <img src="https://drive.google.com/uc?id=1fpS9WQLitBs_fk07tuBtkhkkrLHGAh0x" alt="Eclipse TODOs"/>
 
-2. Highlight the method that takes the input being tested, as shown below. Each TODO is followed by comments that specify what we asked participants to do and the method to highlight.
+2. Highlight the method that takes the input being tested, as shown below. 
 
 <img src="https://drive.google.com/uc?id=1Bs8DV4B1rsqqr8PDWPZbiQL45HFkcqjv" alt="Highlighting target method"/>
 
 3. Right-click the highlighted method and click **"Run Holmes"** in the pop-up menu.
 
+<img src="https://drive.google.com/uc?id=1T5IOWdJvIkt6nte0zcKnrlbdPxQzraol" alt="Run Holmes command"/>
 
 *Defect 0* runs the test generation portion of Holmes (which does not include execution traces, as this was not automated in the user study version of Holmes).
 
