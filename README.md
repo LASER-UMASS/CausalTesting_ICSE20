@@ -15,9 +15,10 @@ If you want to run or use Holmes on your own machine, you will need to do the fo
 
 1. Import the Holmes directory into Eclipse (File > Import... > General/Existing Projects into Workspace).
 2. Once imported, open the *RunHolmes.java* file. At the top there is a global field called **workingDirectory**. Update this variable with the path to the Holmes directory on your machine.
-3. Update the paths to python and node in the fuzzing script ([fuzzers/fuzz.sh]()) to the locations for python and node on your machine.
+3. Download [defects4j](https://github.com/rjust/defects4j) into the Holmes directory.**
+4. Update the paths to python and node in the fuzzing script ([Holmes/fuzzers/fuzz.sh](https://github.com/LASER-UMASS/CausalTesting-Artifact_ICSE20/blob/master/Holmes/fuzzers/fuzz.sh)) to the locations for python and node on your machine.
 
-**Note: The version of Holmes in this repo only works with projects in the Defects4J benchmark. We are currently working on an implementation that is able to run on any JUnit test within the Eclipse IDE in the main [Holmes repository](https://github.com/brittjay0104/FuzzyDriverPlugin).**
+** **Note: The version of Holmes in this repo only works with projects in the Defects4J benchmark. We are currently working on an implementation that is able to run on any JUnit test within the Eclipse IDE in the main [Holmes repository](https://github.com/brittjay0104/FuzzyDriverPlugin).**
 
 ## How to use Holmes
 
