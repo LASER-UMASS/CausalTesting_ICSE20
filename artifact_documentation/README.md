@@ -1,9 +1,7 @@
 # Causal Testing Artifact (ICSE 2020)
 
 This is the artifact for the paper *"Causal Testing: Understanding
-Defects' Root Causes"*. This artifact replicates the user study setup
-used to evaluate our technique, including the supplementary data
-collection materials.
+Defects' Root Causes"*. This artifact facilitates the use of Holmes for debugging defects and re-use of the implementation and/or artifacts in other research studies.
 
 ## What is included in the artifact?
 
