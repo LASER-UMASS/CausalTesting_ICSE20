@@ -5,6 +5,20 @@ Holmes is a prototype implementation of Causal Testing, a novel testing techniqu
 
 ## How to install Holmes
 
+1. Install the [Eclipse IDE](https://www.eclipse.org/eclipseide/) and make sure you have at least Java 1.7 installed on your machine.
+2. Install [Python](https://www.python.org/) and [Node.js](https://nodejs.org/en/).
+3. Clone this repository.
+
 ## How to run Holmes
 
-## Current limitations & on-going improvements
+If you want to run or use Holmes on your own machine, you will need to do the following:
+
+1. Import the Holmes directory into Eclipse (File > Import... > General/Existing Projects into Workspace).
+2. Once imported, open the *RunHolmes.java* file. At the top there is a global field called **workingDirectory**. Update this variable with the path to the Holmes directory on your machine.
+3. Update the paths to python and node in the fuzzing script ([fuzzers/fuzz.sh]()) to the locations for python and node on your machine.
+
+**Note: The version of Holmes in this repo only works with projects in the Defects4J benchmark. We are currently working on an implementation that is able to run on any JUnit test within the Eclipse IDE in the main [Holmes repository](https://github.com/brittjay0104/FuzzyDriverPlugin).**
+
+## How to use Holmes
+
+Please reference the README.md inside the artifact_documentation directory for more details on using Holmes for debugging.
