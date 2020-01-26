@@ -10,7 +10,7 @@ Holmes is a prototype implementation of Causal Testing, a novel testing techniqu
 3. Clone this repository.
 4. Download [defects4j](https://github.com/rjust/defects4j) into the Holmes directory.**
 
-** **Note: The version of Holmes in this repo only works with projects in the Defects4J benchmark. We are currently working on an implementation that is able to run on any JUnit test within the Eclipse IDE in the main [Holmes repository](https://github.com/brittjay0104/FuzzyDriverPlugin).**
+** **Note: The version of Holmes in this repo only works with projects in the Defects4J benchmark. We are currently working on an implementation that is able to run on any JUnit test within the Eclipse IDE.**
 
 ## How to run Holmes
 
