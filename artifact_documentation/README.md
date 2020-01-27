@@ -150,7 +150,7 @@ Given this code exists, we can assume that just erasing this case may fix this d
 
 Let's try adding a flag to the ```escapeJavaStyleString``` method that we can use to control the statements in the case for the ```/``` character. We can do that by first adding a boolean parameter (let's call it ```escapeJava```) to the ```escapeJavaStyleString``` as shown below.
 
-<img src="images/fix-1.png" alt="Add parameter" width="600" height="250"/>
+<img src="images/fix-1.png" alt="Add parameter" width="750" height="200"/>
 
 We can then add a condition for the additional escape character, like so:
 
