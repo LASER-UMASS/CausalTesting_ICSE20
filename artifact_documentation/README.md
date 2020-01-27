@@ -83,7 +83,7 @@ Now let's see how we can use Causal Testing to debug.
 
 ## Debugging with Holmes
 
-Holmes is a prototype implementation of our novel testing technique, Causal Testing. Causal Testing conducts causal experiments, which involves perturbing test inputs to find passing executions that are similar to the failing execution, to help developers understand why a given test is failing and how to fix it.
+Holmes is a prototype implementation of our novel testing technique, Causal Testing. Causal Testing uses causal experiments, which involves perturbing test inputs to find passing executions that are similar to the failing execution, to help developers understand why a given test is failing and how to fix it.
 
 To see how you can use Causal Testing to debug a failing test, we first need to produce the output:
 
