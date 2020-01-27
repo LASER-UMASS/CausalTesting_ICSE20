@@ -21,7 +21,7 @@ All the above listed artifacts, with the exception of the virtual machine file, 
 *Copied from INSTALL.md*
 
 1. Download [VirtualBox](https://www.virtualbox.org).
-2. Download virtual machine file [CausalTesting_Artifact.ova](https://drive.google.com/open?id=1KHwFB2S9-pdzdgChGxqG1AnQNqa9glPj).
+2. Download virtual machine file [CausalTesting_Artifact.ova](https://drive.google.com/open?id=1hyzHYCQEkOzYiLGldkBVxNvQt0Phb-th).
 <br> **Please note this is a large file (5BG) and may some time to download.**
 3. Open VirtualBox.
 4. Go to **File > Import Appliance...**
