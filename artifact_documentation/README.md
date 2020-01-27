@@ -32,7 +32,7 @@ Once the virtual machine is imported, it will appear in your VirtualBox Manager 
 
 You can now start the virtual machine by clicking the green **"Start"** arrow at the top of the VirtualBox Manager (see screenshot below).
 
-<img src="https://drive.google.com/uc?id=1VjrcBPwrz4LO8cwlspb0TmEUcqwMoCp-" alt="VirtualBox Manager"/>
+<img src="images/VB-Manager.png" alt="VirtualBox Manager"/>
 
 ### Resizing the virtual machine screen
 
@@ -40,7 +40,7 @@ If the virtual machine loads and you find it is not an appropriate size, you can
 
 1. In your VirtualBox VM menu, go to **View > Virtual Screen 1 > ...**. You will see different scaling options; select the one that best suites your screen.
 
-<img src="https://drive.google.com/uc?id=1VMiFnd8EXqXiPjR7LAvyUMd94dYkNdQc" alt="Resize menu" width="550" height="600"/>
+<img src="images/resizeVM.png" alt="Resize menu" width="600" height="500"/>
 
 2. Your menu may look different if you are running a different operating system. However, if given percentages to re-scale they will have the same effect.
 
@@ -52,7 +52,7 @@ If you leave the virtual machine and return to a black screen or screen saver, p
 
 Once the virtual machine loads, Eclipse will open. In Eclipse, there will be 8 projects loaded on the left side in the Project Explorer. Seven of the projects are from the [Defects4J](https://github.com/rjust/defects4j) defect benchmark; these projects are labeled *Defect_0_Training*, *Defect_1*, *Defect_2*, *Defect_3*, *Defect_4*, *Defect_5*, and *Defect_6*. The eighth project is *Holmes*. 
 
-<img src="https://drive.google.com/uc?id=1zKXVhjMjzfgrrh2xXY_A7MlLfAkigjRO" alt="Eclipse"/>
+<img src="images/eclipse.png" alt="Eclipse"/>
 
 At the bottom of the window, the Tasks View is open with a list of TODOs. Each TODO maps to a failing test in its respective project that exposes a defect in that project's source code. 
 For example **TODO: Test 00 (Training)** maps to a failing test in the project *Defect_0_Training* that exposes a defect.
@@ -65,19 +65,19 @@ The runtime for Holmes varies depending on a number of factors, such as input va
 
 1. Double-click the TODO labeled **TODO: Test 00 (Training)**. Within a few seconds, the file *BooleanUtilsTest.java* opens at the ```test_toBoolean_String()``` method. Inside the ```test_toBoolean_String()``` method is the failing test ```assertEquals(false, BooleanUtils.toBoolean("tru");```.
 
-<img src="https://drive.google.com/uc?id=1fpS9WQLitBs_fk07tuBtkhkkrLHGAh0x" alt="Eclipse TODOs"/>
+<img src="images/Eclipse-TODOs.png" alt="Eclipse TODOs"/>
 
 2. Double-click the method call ```toBoolean``` so that it is highlighted, as show in the screenshot below.
 
-<img src="https://drive.google.com/uc?id=1Bs8DV4B1rsqqr8PDWPZbiQL45HFkcqjv" alt="Highlighting target method"/>
+<img src="images/Method-Highlight.png" alt="Highlighting target method"/>
 
 3. Right-click the highlighted method and click **"Run Holmes"** in the pop-up menu (shown below). The editor will automatically go to the top of the file and some dialog windows may pop up as Holmes generates and executes tests. This process will take a minute or two; to reduce the chances of Holmes or the virtual machine hanging, we selected a defect for which Holmes is quickly able to find similar passing tests.
 
-<img src="https://drive.google.com/uc?id=1T5IOWdJvIkt6nte0zcKnrlbdPxQzraol" alt="Run Holmes command"/>
+<img src="images/Run-Holmes-Command.png" alt="Run Holmes command"/>
 
 Eventually, a view labeled "Holmes View" will open at the bottom of the screen with the results of the execution (as shown below). 
 
-<img src="https://drive.google.com/uc?id=1ZP2c1zftIuyvyyuEPOBj1pTb9mujvi8N" alt="Test 00 Output"/>
+<img src="images/Training-output.png" alt="Test 00 Output"/>
 
 Now let's see how we can use Causal Testing to debug.
 
@@ -99,11 +99,11 @@ assertEquals(expected, actual);
 
 2. For this test, the method call being tested is ```escapeJava(input)```. Therefore, to invoke Holmes we want to double-click to highlight ```escapeJava```, as shown below.
 
-<img src="https://drive.google.com/uc?id=13BS4_6TgrzqRICaPM9LBRoFonLq8RWzt" alt="Test 01"/>
+<img src="images/Test01.png" alt="Test 01"/>
 
 3. Right click the highlighted method and select **Run Holmes** from the pop-up menu. The output will appear at the bottom of the screen in the "Holmes View"
 
-<img src="https://drive.google.com/uc?id=1SsHbQei8HjLDAuWMpthbxDubzzJiJhwW" alt="Run Holmes Test 02" width="700" height="500"/>
+<img src="images/RunHolmes-02.png" alt="Run Holmes Test 02" width="700" height="500"/>
 
 
 Now that we have the Causal Testing results, we can begin to debug the defect.
@@ -114,11 +114,11 @@ First, we can see that Holmes has provided three similar passing tests and three
 
 Second, we can see that each generated test has a button under it labeled "See Execution Trace". Clicking this button opens a minimized trace of the execution; clicking the button again hides the trace.
 
-<img src="https://drive.google.com/uc?id=1JbXlMtDWcoBIlNipa4h9kiPbyAV55pKn" alt="Test 02 Output"/>
+<img src="images/output-test02.png" alt="Test 02 Output"/>
 
 Let's look at the trace for the most similar passing input, ```"String with a slash in it"```:
 
-<img src="https://drive.google.com/uc?id=1yHVRjarbTvhsvmx9DVGU_4qj-NCdM4QN" alt="Test 02 Trace"/>
+<img src="images/test02-passing.png" alt="Test 02 Trace"/>
 
 We can see that as expected, the final method call to ```escapeJavaStyleString``` returns the same string that was input, as the test expected (```assertEquals(expected,actual)```). When we look at the trace for the original failing test, we can see that this same method call adds an additional character to the input string (```String with a slash (\/) in it```), causing the test to fail.
 
@@ -130,7 +130,7 @@ To navigate to this final method call ```escapeJavaStyleString``` in Eclipse, do
 
 1. Press and hold the *control* button on your keyboard and hover over the ```escapeJava``` method call in the test method. The method should become a link and open a pop-up menu, as shown in the screenshot below.
 
-<img src="https://drive.google.com/uc?id=1h0frp30S5Ydm64UP95dZscgly04Lz6XJ" alt="Open declaration menu" width="600" height="300"/>
+<img src="images/open-dec.png" alt="Open declaration menu" width="600" height="300"/>
 
 2. Click "Open Declaration" in the pop-up menu. This will take you to the ```escapeJava``` method implementation in the ```StringEscapeutils``` class.
 
@@ -150,7 +150,7 @@ Given this code exists, we can assume that just erasing this case may fix this d
 
 Let's try adding a flag to the ```escapeJavaStyleString``` method that we can use to control the statements in the case for the ```/``` character. We can do that by first adding a boolean parameter (let's call it ```escapeJava```) to the ```escapeJavaStyleString``` as shown below.
 
-<img src="https://drive.google.com/uc?id=1oNMtoLBCGzDch593BsSyqJmIkWpShO0j" alt="Add parameter" width="600" height="250"/>
+<img src="images/fix-1.png" alt="Add parameter" width="600" height="250"/>
 
 We can then add a condition for the additional escape character, like so:
 
@@ -163,12 +163,12 @@ case '/':
 
 After making this addition, there are a number of compiler errors that come up from statements that use the methods we changed. The other ```escapeJavaStyleString``` method needs the same parameter (as shown below).
 
-<img src="https://drive.google.com/uc?id=1LV28G591m8LGF6PiUMZZFfMCOcu_KGck" alt="Add parameter again" width="600" height="300"/>
+<img src="images/fix-2.png" alt="Add parameter again" width="600" height="300"/>
 
 We can now go to the calls to ```escapeJavaStyleString``` to add the new parameter values. We know where to go by the red markers in the 
 right-hand gutter (see screenshot below). You can click each red marker to go to each method call.
 
-<img src="https://drive.google.com/uc?id=1wOFpccr3YTbyiyU7TOo1EKRTukdzGBEB" alt="Errors in gutter"/>
+<img src="images/gutter.png" alt="Errors in gutter"/>
 
 Two of these method calls happen within ```escapeJava``` methods; for these, we want to add ```false``` to the end of the parameter list like so:
 
@@ -180,13 +180,13 @@ The other two methods that use ```escapeJavaStyleString``` are within ```escapeJ
 
 Once we've addressed all the compiler errors in the ```StringEscapeUtils``` class, we are ready to test our fix. To do so, return to the test class ```StringEscapeutilsTest``` and click the green run button in the top menu bar (circled below). This will run the test suite to see if our test now passes.
 
-<img src="https://drive.google.com/uc?id=1u_J0TTR9aCyfsPjV4jFl6v15roP63AMy" alt="Run button"/>
+<img src="images/runButton.png" alt="Run button"/>
 
 A dialog will pop up asking you to "Select a way to run 'StringEscapeUtilsTest.java'". Select "JUnit Test" and click "Ok". 
 
 **Success!** We can see in the JUnit view (shown below) that all tests passed, which means we have fixed the defect.
 
-<img src="https://drive.google.com/uc?id=13TcXMqbkneKJ4KMRQMBD4mXxQ1sc2whw" alt="Tests passed!"/>
+<img src="test02-passing.png" alt="Tests passed!"/>
 
 
 Repeat this process with *Defects 2-6* to see how Causal Testing can help with debugging other defects. 
