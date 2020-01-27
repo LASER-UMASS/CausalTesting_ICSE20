@@ -108,6 +108,8 @@ assertEquals(expected, actual);
 
 Now that we have the Causal Testing results, we can begin to debug the defect.
 
+### Determining defect cause
+
 First, we can see that Holmes has provided three similar passing tests and three similar failing tests. Just from looking at the inputs to the tests that pass and the tests that fail we can see that, like the original failing test, all the additional failing tests include the ```/``` character while the tests that pass do not. This suggests the defect has something to do with the presence of the ```/``` in the input string.
 
 Second, we can see that each generated test has a button under it labeled "See Execution Trace". Clicking this button opens a minimized trace of the execution; clicking the button again hides the trace.
@@ -120,7 +122,9 @@ Let's look at the trace for the most similar passing input, ```"String with a sl
 
 We can see that as expected, the final method call to ```escapeJavaStyleString``` returns the same string that was input, as the test expected (```assertEquals(expected,actual)```). When we look at the trace for the original failing test, we can see that this same method call adds an additional character to the input string (```String with a slash (\/) in it```), causing the test to fail.
 
-Based on this information, we can hypothesize that the cause of this defect is the mishandling of the ```/``` character in the ```escapeJavaStyleString``` method. Now let's see if we can find where this happening and how we can fix it.
+### Repairing the defect
+
+Based on the information above, we can hypothesize that the cause of this defect is the mishandling of the ```/``` character in the ```escapeJavaStyleString``` method. Now let's see if we can find where this happening and how we can fix it.
 
 To navigate to this final method call ```escapeJavaStyleString``` in Eclipse, do the following:
 
