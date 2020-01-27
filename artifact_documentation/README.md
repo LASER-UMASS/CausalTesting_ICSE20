@@ -3,7 +3,7 @@
 This is the artifact for the paper *"Causal Testing: Understanding
 Defects' Root Causes"*. This artifact facilitates the use of Holmes for debugging defects and re-use of the implementation and/or artifacts in other research studies.
 
-## What is included in the artifact?
+## What is included in this artifact?
 
 Our artifact includes the following:
 
