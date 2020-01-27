@@ -5,10 +5,10 @@ Holmes is a prototype implementation of Causal Testing, a novel testing techniqu
 
 ## Pre-requisites
 
-1. Install the [Eclipse IDE](https://www.eclipse.org/eclipseide/) and make sure you have at least Java 1.7 installed on your machine.
-2. Install [Python](https://www.python.org/) and [Node.js](https://nodejs.org/en/).
-3. Clone this repository.
-4. Download [defects4j](https://github.com/rjust/defects4j) into the Holmes directory.**
+1. Clone this repository, which includes the *Holmes* directory where the source code is contained.
+2. Download [defects4j](https://github.com/rjust/defects4j) into the *Holmes* directory.**
+3. Install the [Eclipse IDE](https://www.eclipse.org/eclipseide/) and make sure you have at least Java 1.7 installed on your machine.
+4. Install [Python](https://www.python.org/) and [Node.js](https://nodejs.org/en/).
 
 ** **Note: The version of Holmes in this repo only works with projects in the Defects4J benchmark. We are currently working on an implementation that is able to run on any JUnit test within the Eclipse IDE.**
 
