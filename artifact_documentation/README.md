@@ -108,9 +108,40 @@ assertEquals(expected, actual);
 
 Now that we have the Causal Testing results, we can begin to debug the defect.
 
-First, we can see that Holmes has provided three similar passing tests and three similar failing tests. Just from looking at the inputs to the tests that pass and the tests that fail we can see that, like the original failing test, all the additional failing tests include the ```/``` character while the tests that pass do not.
+First, we can see that Holmes has provided three similar passing tests and three similar failing tests. Just from looking at the inputs to the tests that pass and the tests that fail we can see that, like the original failing test, all the additional failing tests include the ```/``` character while the tests that pass do not. This suggests the defect has something to do with the presence of the ```/``` in the input string.
 
 Second, we can see that each generated test has a button under it labeled "See Execution Trace". Clicking this button opens a minimized trace of the execution; clicking the button again hides the trace.
 
 <img src="https://drive.google.com/uc?id=1JbXlMtDWcoBIlNipa4h9kiPbyAV55pKn" alt="Test 02 Output"/>
+
+Let's look at the trace for the most similar passing input, ```"String with a slash in it"```:
+
+<img src="https://drive.google.com/uc?id=1yHVRjarbTvhsvmx9DVGU_4qj-NCdM4QN" alt="Test 02 Trace"/>
+
+We can see that as expected, the final method call to ```escapeJavaStyleString``` returns the same string that was input, as the test expected (```assertEquals(expected,actual)```). When we look at the trace for the original failing test, we can see that this same method call adds an additional character to the input string (```String with a slash (\/) in it```), causing the test to fail.
+
+Based on this information, we can hypothesize that the cause of this defect is the mishandling of the ```/``` character in the ```escapeJavaStyleString``` method. Now let's see if we can find where this happening and how we can fix it.
+
+To navigate to this final method call ```escapeJavaStyleString``` in Eclipse, do the following:
+
+1. Press and hold the *control* button on your keyboard and hover over the ```escapeJava``` method call in the test method. The method should become a link and open a pop-up menu, as shown in the screenshot below.
+
+<img src="https://drive.google.com/uc?id=1h0frp30S5Ydm64UP95dZscgly04Lz6XJ" alt="Open declaration menu" width="600" height="300"/>
+
+2. Click "Open Declaration" in the pop-up menu. This will take you to the ```escapeJava``` method implementation in the ```StringEscapeutils``` class.
+
+3. Still following the trace provided by Holmes, we repeat Step 1 on the ```escapeJavaStyleString``` method call inside the ```escapeJava``` method.
+
+4. The trace indicates that is one more method call to another method named ```escapeJavaStyleString``` inside the ```escapeJavaStyleString``` method. We repeat Step 1 one last time on this last call to ```escapeJavaStyleString``` and find ourselves in the final method of the execution.
+
+Knowing that the part of the input causing the problem is the ```/``` character, we can begin by skimming the method for where this character is (or isn't) handled. Eventually we get to line 243, where we see the case for the ```/``` character and we can see where the extra character is coming from:
+
+```
+case '/':
+  out.write("\\");
+  out.write("/");
+```
+
+Given this code exists, we can assume that just erasing this case may fix this defect but cause problems in other tests or parts of the code. Therefore, we need a fix that makes it so this case does not execute when called from ```escapeJava```.
+
 
