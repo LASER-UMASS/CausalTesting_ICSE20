@@ -3,7 +3,7 @@ Holmes is a prototype implementation of Causal Testing, a novel testing techniqu
 
 **Causal Testing: Understanding Defects' Root Causes** by Brittany Johnson, Yuriy Brun, and Alexandra Meliou, which will appear in the Proceedings of the 42nd International Conference on Software Engineering (ICSE) 2020.
 
-## How to install Holmes
+## Pre-requisites
 
 1. Install the [Eclipse IDE](https://www.eclipse.org/eclipseide/) and make sure you have at least Java 1.7 installed on your machine.
 2. Install [Python](https://www.python.org/) and [Node.js](https://nodejs.org/en/).
@@ -12,7 +12,7 @@ Holmes is a prototype implementation of Causal Testing, a novel testing techniqu
 
 ** **Note: The version of Holmes in this repo only works with projects in the Defects4J benchmark. We are currently working on an implementation that is able to run on any JUnit test within the Eclipse IDE.**
 
-## How to run Holmes
+## How to install Holmes
 
 If you want to run or use Holmes on your own machine, you will need to do the following:
 
