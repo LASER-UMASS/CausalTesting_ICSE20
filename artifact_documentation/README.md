@@ -134,7 +134,7 @@ To navigate to this final method call ```escapeJavaStyleString``` in Eclipse, do
 
 4. The trace indicates that is one more method call to another method named ```escapeJavaStyleString``` inside the ```escapeJavaStyleString``` method. We repeat Step 1 one last time on this last call to ```escapeJavaStyleString``` and find ourselves in the final method of the execution.
 
-Knowing that the part of the input causing the problem is the ```/``` character, we can begin by skimming the method for where this character is (or isn't) handled. Eventually we get to line 243, where we see the case for the ```/``` character and we can see where the extra character is coming from:
+Knowing that the part of the input causing the problem is the ```/``` character, we can begin by skimming the method for where this character is (or isn't) handled. Eventually we get to line 243, where we see the case for the ```/``` character and we can see where the extra character in the failing test output is coming from:
 
 ```
 case '/':
@@ -143,5 +143,48 @@ case '/':
 ```
 
 Given this code exists, we can assume that just erasing this case may fix this defect but cause problems in other tests or parts of the code. Therefore, we need a fix that makes it so this case does not execute when called from ```escapeJava```.
+
+Let's try adding a flag to the ```escapeJavaStyleString``` method that we can use to control the statements in the case for the ```/``` character. We can do that by first adding a boolean parameter (let's call it ```escapeJava```) to the ```escapeJavaStyleString``` as shown below.
+
+<img src="https://drive.google.com/uc?id=1oNMtoLBCGzDch593BsSyqJmIkWpShO0j" alt="Add parameter" width="600" height="250"/>
+
+We can then add a condition for the additional escape character, like so:
+
+```
+case '/':
+  if (escapeJava)
+    out.write("\\");
+  out.write("/");
+```
+
+After making this addition, there are a number of compiler errors that come up from statements that use the methods we changed. The other ```escapeJavaStyleString``` method needs the same parameter (as shown below).
+
+<img src="https://drive.google.com/uc?id=1LV28G591m8LGF6PiUMZZFfMCOcu_KGck" alt="Add parameter again" width="600" height="300"/>
+
+We can now go to the calls to ```escapeJavaStyleString``` to add the new parameter values. We know where to go by the red markers in the 
+right-hand gutter (see screenshot below). You can click each red marker to go to each method call.
+
+<img src="https://drive.google.com/uc?id=1wOFpccr3YTbyiyU7TOo1EKRTukdzGBEB" alt="Errors in gutter"/>
+
+Two of these method calls happen within ```escapeJava``` methods; for these, we want to add ```false``` to the end of the parameter list like so:
+
+```escapeJavaStyleString(str, false, false); ```
+
+The other two methods that use ```escapeJavaStyleString``` are within ```escapeJavascript``` methods. Although we don't know for sure what the value for our new boolean should be when called from ```escapeJavascript```, we can speculate that this method is the reason the code for the character ```/``` exists. Therefore, we add ```true``` to the end of these parameter lists like so:
+
+```escapeJavaStyleString(str, true, true); ```
+
+Once we've addressed all the compiler errors in the ```StringEscapeUtils``` class, we are ready to test our fix. To do so, return to the test class ```StringEscapeutilsTest``` and click the green run button in the top menu bar (circled below). This will run the test suite to see if our test now passes.
+
+<img src="https://drive.google.com/uc?id=1u_J0TTR9aCyfsPjV4jFl6v15roP63AMy" alt="Run button"/>
+
+A dialog will pop up asking you to "Select a way to run 'StringEscapeUtilsTest.java'". Select "JUnit Test" and click "Ok". 
+
+**Success!** We can see in the JUnit view (shown below) that all tests passed, which means we have fixed the defect.
+
+<img src="https://drive.google.com/uc?id=13TcXMqbkneKJ4KMRQMBD4mXxQ1sc2whw" alt="Tests passed!"/>
+
+
+Repeat this process with *Defects 2-6* to see how Causal Testing can help with debugging other defects. 
 
 
