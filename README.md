@@ -1,7 +1,9 @@
 # Holmes: A Causal Testing Prototype
 Holmes is a prototype implementation of Causal Testing, a novel testing technique that uses causal experiments to help developers debug Java programs. This repository contains the source code along with the user study setup and materials for the paper titled:
 
-**Causal Testing: Understanding Defects' Root Causes** by Brittany Johnson, Yuriy Brun, and Alexandra Meliou, which will appear in the Proceedings of the 42nd International Conference on Software Engineering (ICSE) 2020.
+**Causal Testing: Understanding Defects' Root Causes** by Brittany Johnson, Yuriy Brun, and Alexandra Meliou, published in the Proceedings of the 42nd International Conference on Software Engineering (ICSE) 2020. <http://dx.doi.org/10.1145/3377811.3380377>
+
+The version of Holmes described in that paper, and the artifact released with that paper, can be viewed at <https://doi.org/10.5281/zenodo.3676139>
 
 ## Pre-requisites
 
